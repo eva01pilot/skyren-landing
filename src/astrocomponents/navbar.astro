@@ -1,0 +1,47 @@
+---
+import small_logo from "../../public/small_logo.svg";
+---
+
+<div class="grid grid-cols-2">
+  <div class="flex flex-row">
+    <img src={small_logo} class="relative" alt="Skyrenovation"/>
+    <div class="flex max-w-[20rem] flex-col p-4">
+      <h1 class="text-[2rem] font-Montserrat text-white">+971 55 196 5778</h1>
+      <h1 class="text-[1rem] font-Montserrat text-white">
+        602-0323, Dubai Investments Park 1, New Dubai, UAE
+      </h1>
+    </div>
+  </div>
+  <div class="flex flex-row items-start justify-end p-4">
+    <ul class="flex list-none text-white">
+      <li class="p-2 font-Montserrat font-[400] relative">About</li>
+      <li class="p-2 font-Montserrat font-[400] relative">How it works</li>
+      <li class="p-2 font-Montserrat font-[400] relative">Design project</li>
+      <li class="p-2 font-Montserrat font-[400] relative">Portfolio</li>
+      <li class="p-2 font-Montserrat font-[400] relative">Clients say</li>
+      <li class="p-2 font-Montserrat font-[400] relative">FAQ</li>
+    </ul>
+  </div>
+</div>
+<style scoped>
+  ul > li:hover::after {
+    transform: scaleX(1);
+    transform-origin: center;
+  }
+  ul>li{
+    cursor: pointer;
+  }
+  ul > li::after {
+    content: "";
+    position: absolute;
+    width: calc(100% - 1rem);
+    margin-left: 0.5rem;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 4px;
+    left: 0;
+    background-color: white;
+    transform-origin: center;
+    transition: transform 0.15s ease-out;
+  }
+</style>

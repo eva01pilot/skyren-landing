@@ -1,0 +1,83 @@
+---
+import Navbar from "../astrocomponents/navbar.astro";
+import StarterLogo from "../astrocomponents/starter_logo.astro";
+import scroll from "../../public/scroll.svg"
+import Blob from "../astrocomponents/blob.astro";
+---
+<div class="absolute">
+    <Blob />
+</div>
+<div class="z-10 flex h-screen w-screen flex-col bg-no-repeat">
+  <div class="p-2 pl-16 brightness-200">
+    <Navbar />
+  </div>
+  <div class="flex flex-col items-center justify-center self-center">
+    <StarterLogo />
+    <div class="space-between flex flex-col items-center justify-center">
+      <h1
+        class="text-shadow max-w-[50rem] pb-4 text-center text-[2rem] text-white font-Montserrat font-[400] leading-10"
+      >
+        Making renovation of your apartments and villas in Dubai at a fixed
+        price
+      </h1>
+      <button
+        class="font-Montserrat font-[700] leading-6 rounded-[3px] bg-[#CE925B] p-4 pl-12 pr-12 text-[1.1rem] text-white shadow-md transition-[padding-left_padding-right_background-color] hover:bg-white hover:pl-16 hover:pr-16 hover:text-[#CE925B]"
+      >
+        GET CONSULTATION
+      </button>
+    </div>
+    <div class="mt-28 flex justify-center items-center flex-col">
+        <h1 class="text-center text-white text-[24px] font-Montserrat font-[400]" >scroll</h1>
+        <img class="float" alt="scroll" src={scroll} />
+    </div>
+  </div>
+</div>
+<div
+  class="anim-fadein bg-hero absolute top-0 left-0 -z-50 h-screen w-screen bg-no-repeat"
+>
+</div>
+<style>
+  .bg-hero {
+    background: url("/hero_wings.svg"), url("/hero_bg.jpeg") no-repeat;
+    background-size: cover;
+  }
+
+  @keyframes bright {
+    0% {
+      filter: brightness(30%) blur(10px);
+    }
+    100% {
+      filter: brightness(40%) blur(0px);
+    }
+  }
+  @keyframes unzoom {
+    0% {
+      scale: 1;
+    }
+    100% {
+      scale: 1.2;
+    }
+  }
+  .anim-fadein {
+    animation: bright 4s ease-in-out forwards, unzoom 10s ease-out forwards;
+  }
+  .text-shadow {
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.31);
+  }
+
+  @keyframes floating{
+    0%{
+        transform: translateY(10%);
+    }
+    50%{
+        transform: translateY(-10%);
+    }
+    100%{
+        transform: translateY(10%);
+    }
+  }
+  .float{
+    animation: floating 4s ease-in-out infinite;
+  }
+
+</style>
